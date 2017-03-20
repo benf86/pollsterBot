@@ -66,7 +66,7 @@ get specific poll info:
 remove your own poll:
 \`/msg @pollster remove <pollId>\`
 
-publish a poll to a channel *the bot is in*:
+publish a poll to a channel *the bot is in* (don't type the #):
 \`/msg @pollster publish <pollId> <channelName>\`
 `);
 
