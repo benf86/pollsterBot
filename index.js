@@ -15,7 +15,7 @@ const rtm = new RtmClient(botToken);
 rtm.on(CLIENT_EVENTS.RTM.AUTHENTICATED, function (rtmStartData) {
   rtm.removeAllListeners(RTM_EVENTS.MESSAGE);
 
-  const channels = rtmStartData.channels.reduce((prev, cur) =>
+  const channels = rtmStartData.channels.concat(rtmStartData.groups).reduce((prev, cur) =>
     Object.assign(prev, { [cur.name]: cur.id, [cur.id]: cur.name }), {});
 
   const users = rtmStartData.users.reduce((prev, cur) =>
